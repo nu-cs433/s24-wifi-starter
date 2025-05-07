@@ -6,6 +6,8 @@
 #include "WiFi.h"
 
 // OLED display
+// These are hardware specific to the Heltec WiFi LoRa 32 V3
+// Cite: https://resource.heltec.cn/download/WiFi_LoRa_32_V3/HTIT-WB32LA(F)_V3.1_Schematic_Diagram.pdf
 #define OLED_RESET 21 
 #define OLED_SDA 17
 #define OLED_SCL 18
@@ -30,6 +32,7 @@ void logo()
 	display.sendBuffer();
 }
 
+// Setup, code starts here and runs this function once
 void setup(void) 
 {
   // Start serial communications
@@ -37,14 +40,15 @@ void setup(void)
 
   // Initialize the display
   display.begin();
-	display.setFont(u8g2_font_NokiaSmallPlain_te );
+	display.setFont(u8g2_font_NokiaSmallPlain_te);
 
   // Draw a logo image on boot
 	logo();
-	delay(1000);
+	delay(3000);
 	display.clear();
 }
 
+// Loop, after setup, this function is called repeatedly
 void loop() 
 {
   iteration_count++;

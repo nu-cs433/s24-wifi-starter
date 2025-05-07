@@ -1,4 +1,2 @@
-# nu-397-lab-wifi-starter
-
-Lab: WiFi starter code
+# Northwestern CS433 Lab WiFi starter code
 
